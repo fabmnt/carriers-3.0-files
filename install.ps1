@@ -9,6 +9,22 @@ $ComposeFile = Join-Path ([System.IO.Path]::GetTempPath()) ("docker-compose-{0}.
 $DockerInstallerUrl = 'https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe'
 $DockerInstallerFile = Join-Path ([System.IO.Path]::GetTempPath()) ("docker-desktop-installer-{0}.exe" -f [Guid]::NewGuid().ToString('N'))
 
+function Invoke-DownloadFile {
+    param(
+        [Parameter(Mandatory = $true)][string]$Uri,
+        [Parameter(Mandatory = $true)][string]$OutFile
+    )
+
+    $previousProgressPreference = $ProgressPreference
+    try {
+        $ProgressPreference = 'SilentlyContinue'
+        Invoke-WebRequest -Uri $Uri -OutFile $OutFile -UseBasicParsing
+    }
+    finally {
+        $ProgressPreference = $previousProgressPreference
+    }
+}
+
 function Test-Command {
     param([Parameter(Mandatory = $true)][string]$Name)
     return $null -ne (Get-Command $Name -ErrorAction SilentlyContinue)
@@ -91,10 +107,10 @@ function Install-Docker {
     }
 
     Write-Host "Downloading Docker Desktop installer to $DockerInstallerFile..."
-    Invoke-WebRequest -Uri $DockerInstallerUrl -OutFile $DockerInstallerFile -UseBasicParsing
+    Invoke-DownloadFile -Uri $DockerInstallerUrl -OutFile $DockerInstallerFile
 
-    Write-Host 'Installing Docker Desktop with WSL 2 backend...'
-    $installArgs = @('install', '--quiet', '--accept-license', '--backend=wsl-2', '--user')
+    Write-Host 'Installing Docker Desktop...'
+    $installArgs = @('install')
     $process = Start-Process -FilePath $DockerInstallerFile -ArgumentList $installArgs -Wait -PassThru
     if ($process.ExitCode -notin @(0, 3010)) {
         throw "Docker Desktop installation failed with exit code $($process.ExitCode)."
@@ -162,7 +178,7 @@ try {
     Wait-DockerReady
 
     Write-Host "Downloading compose file to $ComposeFile..."
-    Invoke-WebRequest -Uri $ComposeUrl -OutFile $ComposeFile -UseBasicParsing
+    Invoke-DownloadFile -Uri $ComposeUrl -OutFile $ComposeFile
 
     Write-Host 'Pulling Docker images...'
     docker compose -p $ComposeProjectName -f $ComposeFile pull
