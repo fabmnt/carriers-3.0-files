@@ -1,0 +1,88 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: executor-mongo
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    volumes:
+      - mongo_data:/data/db
+
+  redis:
+    image: redis:7-alpine
+    container_name: executor-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 3s
+      retries: 10
+    volumes:
+      - redis_data:/data
+
+  api:
+    container_name: executor-api
+    image: eloskar101/executor-api:beta
+    pull_policy: always
+    restart: unless-stopped
+    depends_on:
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+    environment:
+      REPORTS_PATH: /app/reports
+      NODE_ENV: production
+      PORT: 3018
+      MONGODB_URI: mongodb://mongo:27017/executor
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+      SOCKET_CORS_ORIGIN: "*"
+
+    ports:
+      - "3018:3018"
+
+    volumes:
+      - ${HOST_REPORTS_PATH:-/var/lib/executor/reports}:/app/reports
+
+  agent:
+    container_name: executor-agent
+    image: eloskar101/agent:beta
+    pull_policy: always
+    restart: unless-stopped
+
+    ports:
+      - "${AGENT_PORT:-8080}:80"
+
+  runner:
+    container_name: executor-runner
+    image: eloskar101/core:beta
+    pull_policy: always
+    restart: unless-stopped
+    depends_on:
+      redis:
+        condition: service_healthy
+
+    environment:
+      NODE_ENV: production
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_DB: 0
+      REPORTS_PATH: /app/reports
+
+    volumes:
+      - ${HOST_REPORTS_PATH:-/var/lib/executor/reports}:/app/reports
+
+    init: true
+    shm_size: "1gb"
+
+volumes:
+  mongo_data:
+  redis_data:
