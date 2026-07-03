@@ -1,0 +1,295 @@
+{
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNTdmZWRjMzg2ZTgyMWUzZDcxZDBkOSIsImlhdCI6MTc4MjMzNjg0NywiZXhwIjoxNzg0OTI4ODQ3fQ.9AT8gpTbC8jrD-oFcWtZYq6FgMuA7KNHB9PoiW7vDOw",
+  "apiUrl": "https://dev-carrier.dentalautomation.ai",
+  "bot": {
+    "botName": "Liberty Dental Plan",
+    "targetUrl": "https://providerportal.libertydentalplan.com",
+    "username": "GrandDR",
+    "password": "Gr@nd2026!",
+    "otherInformation": {}
+  },
+  "executionId": "69e271a8ea737392921aaa28",
+  "patients": [
+    {
+      "id": "69e271a8ea737392921aaa29",
+      "patientName": {
+        "key": "patient_first_name",
+        "value": "Candice"
+      },
+      "patientLastName": {
+        "key": "patient_last_name",
+        "value": "Scott"
+      },
+      "patientMemberId": {
+        "key": "memberid",
+        "value": "035351523"
+      },
+      "patientDob": {
+        "key": "patient_dob",
+        "value": "03/02/2003"
+      },
+      "policyHolderName": {
+        "key": "subscriber_first_name",
+        "value": "Candice"
+      },
+      "policyHolderLastName": {
+        "key": "subscriber_last_name",
+        "value": "Scott"
+      },
+      "policyHolderDob": {
+        "key": "subscriber_dob",
+        "value": "03/02/2003"
+      },
+      "relationship": {
+        "key": "relationship_to_subscriber",
+        "value": "Child"
+      },
+      "zipCode": {
+        "key": "subscriber_zip_code",
+        "value": "85345"
+      },
+      "verificationType": "fbd",
+      "filenames": [
+        "Insurance_verification_form_Metlife Tx- Ppo_Primary_Faith Garcia_07192025.docx,Eligibility_status_Metlife Tx- Ppo_Primary_Faith Garcia_07192025.pdf"
+      ],
+      "otherInformation": {}
+    },
+    {
+      "id": "69e271a8ea737392921aaa2a",
+      "patientName": {
+        "key": "patient_first_name",
+        "value": "Matthew"
+      },
+      "patientLastName": {
+        "key": "patient_last_name",
+        "value": "Tietjen"
+      },
+      "patientMemberId": {
+        "key": "memberid",
+        "value": "B35065868"
+      },
+      "patientDob": {
+        "key": "patient_dob",
+        "value": "01/08/2008"
+      },
+      "policyHolderName": {
+        "key": "subscriber_first_name",
+        "value": "Matthew"
+      },
+      "policyHolderLastName": {
+        "key": "subscriber_last_name",
+        "value": "Tietjen"
+      },
+      "policyHolderDob": {
+        "key": "subscriber_dob",
+        "value": "01/08/2008"
+      },
+      "relationship": {
+        "key": "relationship_to_subscriber",
+        "value": "Child"
+      },
+      "zipCode": {
+        "key": "subscriber_zip_code",
+        "value": "10024"
+      },
+      "verificationType": "fbd",
+      "filenames": [
+        "Insurance_verification_form_Metlife Tx- Ppo_Primary_Faith Garcia_07192025.docx,Eligibility_status_Metlife Tx- Ppo_Primary_Faith Garcia_07192025.pdf"
+      ],
+      "otherInformation": {}
+    },
+    {
+      "id": "69e271a8ea737392921aaa2c",
+      "patientName": {
+        "key": "patient_first_name",
+        "value": "Ricardo"
+      },
+      "patientLastName": {
+        "key": "patient_last_name",
+        "value": "Meza"
+      },
+      "patientMemberId": {
+        "key": "memberid",
+        "value": "926418904"
+      },
+      "patientDob": {
+        "key": "patient_dob",
+        "value": "01/08/1998"
+      },
+      "policyHolderName": {
+        "key": "subscriber_first_name",
+        "value": "Ricardo"
+      },
+      "policyHolderLastName": {
+        "key": "subscriber_last_name",
+        "value": "Meza"
+      },
+      "policyHolderDob": {
+        "key": "subscriber_dob",
+        "value": "01/08/1998"
+      },
+      "relationship": {
+        "key": "relationship_to_subscriber",
+        "value": "Child"
+      },
+      "zipCode": {
+        "key": "subscriber_zip_code",
+        "value": "34922"
+      },
+      "verificationType": "fbd",
+      "filenames": [
+        "Insurance_verification_form_PRINCIPLE PPO_Primary_Chevy Buckley_07232025.docx,Eligibility_status_PRINCIPLE PPO_Primary_Chevy Buckley_07232025.pdf"
+      ],
+      "otherInformation": {}
+    },
+    {
+      "id": "6a43eaedb270a3a5d9d95c34",
+      "patientName": {
+        "key": "patient_first_name",
+        "value": "Alexandra"
+      },
+      "patientLastName": {
+        "key": "patient_last_name",
+        "value": "Ortiz"
+      },
+      "patientMemberId": {
+        "key": "memberid",
+        "value": "H30549080"
+      },
+      "patientDob": {
+        "key": "patient_dob",
+        "value": "04/02/2011"
+      },
+      "policyHolderName": {
+        "key": "subscriber_first_name",
+        "value": "Alice"
+      },
+      "policyHolderLastName": {
+        "key": "subscriber_last_name",
+        "value": "Dau"
+      },
+      "policyHolderDob": {
+        "key": "subscriber_dob",
+        "value": "03/31/1976"
+      },
+      "relationship": {
+        "key": "relationship_to_subscriber",
+        "value": "Child"
+      },
+      "zipCode": {
+        "key": "subscriber_zip_code",
+        "value": "33143"
+      },
+      "verificationType": "elg",
+      "filenames": [],
+      "otherInformation": {}
+    }
+  ],
+  "config": {
+    "instantPrinter": false,
+    "alerts": true,
+    "statusPrinter": true,
+    "isDiva": false,
+    "plans": true,
+    "twoFA": true,
+    "networkType": "INN",
+    "defaultCharacter": "-",
+    "activePrint": true,
+    "onlyPrint": false,
+    "onlyElg": true,
+    "onlyForm": true,
+    "shortForm": false,
+    "claimForm": false,
+    "vouchers": true,
+    "planChecker": false,
+    "otherInformation": [
+      {
+        "doctors_name": "Sin definir"
+      },
+      {
+        "npi": "1801501028"
+      },
+      {
+        "tax_id": "472651798"
+      },
+      {
+        "phone": "+50578714404"
+      },
+      {
+        "provider_last_name": "ALAN"
+      },
+      {
+        "location": "PETIT SMILES LLC"
+      },
+      {
+        "email": "o@g.com"
+      },
+      {
+        "providerNPI": "1770527707"
+      },
+      {
+        "zkeep_client": "1"
+      },
+      {
+        "test": "1"
+      },
+      {
+        "unify_client": "1"
+      },
+      {
+        "unify_username": "dentalrobot@saltdentalpartners.com"
+      },
+      {
+        "unify_location": "Oregon"
+      },
+      {
+        "unify_password": "pcYJSd4kk2T6"
+      }
+    ],
+    "stateSetter": {
+      "_id": "62461088937d66d33cb14359",
+      "createForm": true,
+      "createShortForm": true,
+      "createPrint": true,
+      "overwrite": true
+    },
+    "smartSearch": true,
+    "maxOutForm": false,
+    "clientName": "Carriers Testing",
+    "clinicName": "Carrier testing clinic"
+  },
+  "rv": {
+    "network": "",
+    "fam_max": "",
+    "plan_effective_date": "",
+    "is_existing_plan": "",
+    "ind_max": "",
+    "ind_ded": "",
+    "ded_rem": "",
+    "max_used": "",
+    "lifetime": "",
+    "term_date": "",
+    "lifetime_rem": "",
+    "effective_date": "",
+    "group_name": "",
+    "annual_used": "",
+    "ortho_age_limit": "",
+    "group_id": "",
+    "patient_ortho_pay": "",
+    "max_rem": "",
+    "history_note": "",
+    "range_of_benefits": "",
+    "lifetime_used": "",
+    "fam_used": "",
+    "fam_rem": "",
+    "ded_used": "",
+    "bk": {},
+    "new_node": "",
+    "url_prod_server": "https://carriers.dentalautomation.ai/",
+    "by_smart_search": 0,
+    "insurance_type": "",
+    "next_available_note": [],
+    "other_info": {},
+    "wp": {}
+  }
+}
